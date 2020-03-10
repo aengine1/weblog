@@ -24,5 +24,9 @@ public class IndexAdminController {
     public String index1() {
         return "index";
     }
+    @RequestMapping("/test")
+    public String index2() {
+        return "index2";
+    }
 
 }
