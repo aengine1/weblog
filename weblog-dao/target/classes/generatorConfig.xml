@@ -27,7 +27,7 @@
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
         <!--生成entity类存放位置-->
-        <javaModelGenerator targetPackage="pojo" targetProject="G:\IDEA\weblog\weblog-pojo\src\main\java\">
+        <javaModelGenerator targetPackage="com.weblog.pojo" targetProject="G:\IDEA\weblog\weblog-pojo\src\main\java\">
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
             <property name="enableSubPackages" value="false"/>
             <!-- 从数据库返回的值被清理前后的空格 -->
@@ -43,8 +43,27 @@
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
         <!--生成对应表及类名-->
-        <table tableName="user">
-            <generatedKey column="user_id" sqlStatement="JDBC"/>
+        <!--<table tableName="user">-->
+            <!--<generatedKey column="user_id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+        <!--<table tableName="roles">-->
+            <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+        <!--<table tableName="role_user">-->
+            <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+        <!--<table tableName="menu">-->
+            <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+        <!--<table tableName="menu_role">-->
+            <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+        <table tableName="user_permission">
+            <generatedKey column="id" sqlStatement="JDBC"/>
         </table>
+        <table tableName="perimission">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+
     </context>
 </generatorConfiguration>

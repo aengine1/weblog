@@ -1,10 +1,15 @@
 package com.weblog.dao;
 
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.weblog.pojo.Perimission;
+import com.weblog.pojo.Roles;
 import com.weblog.pojo.User;
 import com.weblog.pojo.UserExample;
+import java.util.List;
 
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
+@Mapper
 public interface UserMapper {
     int countByExample(UserExample example);
 
@@ -27,4 +32,10 @@ public interface UserMapper {
     int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
+
+    User getUserByUserName(@Param("userName") String userName);
+
+    User getRolesByUserName(@Param("userName") String userName);
+
+    List<User> getPermissionsByUserId(Integer userId);
 }

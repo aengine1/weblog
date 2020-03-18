@@ -4,25 +4,29 @@ import com.weblog.service.IIndexService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import javax.servlet.http.HttpServletRequest;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 //@RestController
 @Controller
-public class IndexAdminController {
+@RequestMapping("/test")
+public class TestController {
 
     @Autowired
     private IIndexService indexService;
 
-    @RequestMapping("/admin")
-    public String index() {
+    @RequestMapping("/hello")
+    @ResponseBody
+    public String hello() {
         return "Welcome to Admin, Dao名称为：" + indexService.Hello();
     }
 
-    @RequestMapping("/admin1")
-    public String index1() {
-        return "index";
+//    @RequestMapping("/login")
+//    public String login() {
+//        return "login";
+//    }
+    @RequestMapping("/test")
+    public String test() {
+        return "noAuth";
     }
 
 
